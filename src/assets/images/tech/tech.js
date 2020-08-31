@@ -1,0 +1,17 @@
+export default {
+  VSCode: require("./VSCode.png"),
+  React: require("./React.png"),
+  Sequelize: require("./Sequelize.png"),
+  Bootstrap: require("./Bootstrap.png"),
+  CSS: require("./CSS.png"),
+  Express: require("./Express.png"),
+  Git: require("./Git.png"),
+  HTML: require("./HTML.png"),
+  Illustrator: require("./Illustrator.png"),
+  Javascript: require("./Javascript.png"),
+  jQuery: require("./jQuery.png"),
+  MongoDB: require("./MongoDB.png"),
+  Node: require("./Node.png"),
+  Photoshop: require("./Photoshop.png"),
+  Wordpress: require("./Wordpress.png"),
+};
