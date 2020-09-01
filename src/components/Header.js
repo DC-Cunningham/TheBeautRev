@@ -11,11 +11,24 @@ const linkItems = [
 ];
 
 const StyledHeader = styled.div`
-  background-color: ${(props) => props.theme.primary.dark};
-  padding: 20px 0;
+  /* background-color: ${(props) =>
+    props.theme.primary.dark};
+  padding: 20px 0; */
+  font: 20px "opensans-bold", sans-serif;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin: 0 auto;
+  z-index: 100;
+  position: absolute;
+  left: 0;
 `;
 
 const StyledUL = styled.ul`
+  padding: 20px 13px;
+  line-height: 32px;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
   text-align: right;
   height: 60px;
   margin: 0;
@@ -28,7 +41,7 @@ const StyledUL = styled.ul`
 
 const StyledLink = styled(Link)`
   color: ${(props) => props.theme.text.black};
-  font-weight: ${(props) => (props.active ? "700" : "normal")};
+  color: ${(props) => (props.active ? "#2adedd" : "#fff")};
   text-decoration: none;
   text-transform: uppercase;
 `;

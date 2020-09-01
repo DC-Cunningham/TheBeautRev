@@ -7,7 +7,7 @@ import Wrapper from "./Wrapper";
 import backgroundImage from "../assets/images/BlueBinary.jpg";
 
 const StyledBackground = styled.section`
-  height: calc(100vh - 200px);
+  height: calc(100vh);
   background-image: url(${backgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,6 +23,8 @@ const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  padding-bottom: 180px;
 
   & > div.content {
     flex: 1;
@@ -44,6 +46,7 @@ const StyledForm = styled.form`
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 200px;
   padding-top: 96px;
   padding-bottom: 102px;
   color: #636363;
@@ -74,7 +77,7 @@ const StyledForm = styled.form`
 }
   }
   & > textarea {
-    min-height: 220px;
+    min-height: 120px;
   }
   ::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
@@ -131,7 +134,6 @@ function Contact(props) {
     <StyledBackground>
       <Overlay>
         <Wrapper>
-          <h1>Hello</h1>
           <Formik
             onSubmit={handleSubmit}
             initialValues={{ email: "", name: "", subject: "", message: "" }}

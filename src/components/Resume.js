@@ -1,21 +1,53 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 import Wrapper from "./Wrapper";
 import Work from "./Work";
 import Education from "./Education";
 import Tech from "./Tech";
 import Portfolio from "./Portfolio.js";
+import backgroundImage from "../assets/images/BlueBinary.jpg";
 import Avatar from "../assets/images/profilepic.jpg";
 
 const Row = styled.div`
   display: flex;
 `;
 const HeaderColumn = styled.div`
-  flex: 150px;
+  flex: 200px;
+  padding: 10px 100px 20px 20px;
 `;
 const MainColumn = styled.div`
   width: 100%;
+`;
+
+const ScrollDown = styled.div`
+  position: absolute;
+  text-align: center;
+  bottom: 50px;
+  left: 50%;
+  height: 48px;
+  width: 48px;
+  font-size: 48px;
+  color: #000;
+  border-radius: 100%;
+  background-color: #fff;
+`;
+
+const ScrollUp = styled.div`
+  position: relative;
+  text-align: center;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -20px;
+  display: block;
+  height: 48px;
+  width: 48px;
+  font-size: 42px;
+  color: #fff;
+  border-radius: 100%;
+  background-color: #525252;
 `;
 
 const Header = styled.h2`
@@ -29,9 +61,52 @@ const Header = styled.h2`
   padding-bottom: 6px;
 `;
 
+const HeroSection = styled.section`
+  height: calc(100vh);
+  background-image: url(${backgroundImage});
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+`;
+
+const HeroOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+`;
+
+const HeroContainer = styled.div`
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  h1 {
+    font: 90px "opensans-bold", sans-serif;
+    color: #fff;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font: 24px "librebaskerville-regular", serif;
+    color: #ddd;
+  }
+  hr {
+    border-color: hsla(0, 0%, 58.8%, 0.9);
+    border-width: 3px 0 0;
+  }
+`;
+
 const AboutMeSection = styled.section`
   background-color: #000524;
-  color: white;
+  padding-top: 96px;
+  padding-bottom: 66px;
   .avatar {
     width: 120px;
     height: 120px;
@@ -39,15 +114,25 @@ const AboutMeSection = styled.section`
     margin-top: 100px;
   }
   .about-container {
-    & > p {
-      color: white;
+    a {
+      text-decoration: none;
+    }
+    p {
+      color: #ccc;
+    }
+    h2 {
+      font: 22px/30px "opensans-bold", sans-serif;
+      line-height: 30px;
+      font-size: 22px;
+      color: #fff;
     }
   }
 `;
 
 const EducationSection = styled.section`
   background-color: #ffffff;
-
+  padding-top: 96px;
+  padding-bottom: 66px;
   .education-container {
     display: grid;
     place-items: center;
@@ -60,7 +145,8 @@ const EducationSection = styled.section`
 
 const WorkSection = styled.section`
   background-color: rgb(235, 238, 238);
-
+  padding-top: 96px;
+  padding-bottom: 66px;
   .work-container {
     & > p {
       color: red;
@@ -70,6 +156,8 @@ const WorkSection = styled.section`
 
 const TechSection = styled.section`
   background-color: #ffffff;
+  padding-top: 76px;
+  padding-bottom: 56px;
   .tech-container {
     .grid {
       display: grid;
@@ -81,7 +169,8 @@ const TechSection = styled.section`
 
 const PortfolioSection = styled.section`
   background-color: rgb(235, 238, 238);
-
+  padding-top: 76px;
+  padding-bottom: 200px;
   .portfolio-container {
     .grid {
       display: grid;
@@ -94,6 +183,24 @@ const PortfolioSection = styled.section`
 function Resume(props) {
   return (
     <>
+      <HeroSection>
+        <Wrapper>
+          <HeroOverlay>
+            <HeroContainer>
+              <h1>DC Cunningham</h1>
+              <h3>
+                Full stack Web Developer leveraging an extensive background in
+                the bicycle industry to build user focused experiences on
+                multiple platforms.
+              </h3>
+              <hr />
+            </HeroContainer>
+            <ScrollDown>
+              <FontAwesomeIcon icon={faAngleDown} />
+            </ScrollDown>
+          </HeroOverlay>
+        </Wrapper>
+      </HeroSection>
       <AboutMeSection>
         <Wrapper>
           <div className="about-container">
@@ -161,8 +268,10 @@ function Resume(props) {
                 <Header>Tech Proficiencies</Header>
               </HeaderColumn>
               <MainColumn>
-                Here are just a few of the programs, frameworks and systems that
-                I use on a regular basis.
+                <p>
+                  Here are just a few of the programs, frameworks and systems
+                  that I use on a regular basis.
+                </p>
               </MainColumn>
             </Row>
             <div className="grid">
@@ -186,6 +295,9 @@ function Resume(props) {
               <Portfolio />
             </div>
           </div>
+          <ScrollUp>
+            <FontAwesomeIcon icon={faAngleUp} />
+          </ScrollUp>
         </Wrapper>
       </PortfolioSection>
     </>

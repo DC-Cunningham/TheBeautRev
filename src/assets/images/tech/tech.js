@@ -14,4 +14,6 @@ export default {
   Node: require("./Node.png"),
   Photoshop: require("./Photoshop.png"),
   Wordpress: require("./Wordpress.png"),
+  Woo: require("./Woo.png"),
+  AWS: require("./AWS.png"),
 };

@@ -3,78 +3,96 @@ import styled from "styled-components";
 
 import images from "../assets/images/tech/tech.js";
 
+const Figure = styled.figure`
+  text-align: center;
+`;
+
 const TechImage = styled.img`
   height: 100px;
   width: 100px;
+  align-items: center;
+`;
+
+const Caption = styled.figcaption`
+  font: 16px/24px "librebaskerville-italic", serif;
+  color: #6e7881;
 `;
 
 function Tech(props) {
   return (
     <>
-      <figure>
+      <Figure>
         <TechImage src={images.VSCode} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>VSCode</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.Git} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>Git</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.Bootstrap} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>Bootstrap</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.CSS} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>CSS</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.Express} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>Express</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.HTML} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>HTML</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.Illustrator} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>Illustrator</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.Javascript} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>Javascript</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.jQuery} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>jQuery</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.MongoDB} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>MongoDB</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.Node} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>Node.js</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.Photoshop} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>Photoshop</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.React} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>React.js</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.Sequelize} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>Sequelize</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.Wordpress} />
-        <figcaption>VSCode</figcaption>
-      </figure>
-      <figure>
+        <Caption>Wordpress</Caption>
+      </Figure>
+      <Figure>
         <TechImage src={images.MongoDB} />
-        <figcaption>VSCode</figcaption>
-      </figure>
+        <Caption>MongoDB</Caption>
+      </Figure>
+      <Figure>
+        <TechImage src={images.Woo} />
+        <Caption>Woo Commerce</Caption>
+      </Figure>
+      <Figure>
+        <TechImage src={images.AWS} />
+        <Caption>AWS</Caption>
+      </Figure>
     </>
   );
 }
