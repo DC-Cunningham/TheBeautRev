@@ -44,66 +44,44 @@ const StyledForm = styled.form`
   bottom: 20px;
   left: 0;
   right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 200px;
-  padding-top: 96px;
-  padding-bottom: 102px;
+  margin: 0 auto 200px;
+  padding: 96px 0 102px;
   color: #636363;
   overflow: scroll;
 
   & label {
-    font: 15px/24px "opensans-bold", sans-serif;
+    font-family: "opensans-bold", sans-serif;
+    font-size: 15px;
+    line-height: 24px;
     margin: 12px 120px;
     color: #ebeeee;
     width: 26%;
   }
-  & .required {
+
+  &.required {
     color: #0762f9;
     font-size: 16px;
   }
+
   & > input,
-  textarea {
+  & > textarea {
     justify-self: center;
     padding: 10px 20px;
     color: #eee;
     background: #373233;
     margin-bottom: 42px;
-    border: 0;
-    outline: none;
     font-size: 15px;
     line-height: 24px;
     width: 65%;
-}
   }
+
   & > textarea {
     min-height: 120px;
   }
-  ::-webkit-input-placeholder {
-    /* WebKit, Blink, Edge */
-    color: #fff;
-  }
-  :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: #fff;
-    opacity: 1;
-  }
-  ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: #fff;
-    opacity: 1;
-  }
-  :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #fff;
-  }
-  ::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: #fff;
-  }
+
   /* Button */
   & > button {
-    font: 16px/30px "opensans-bold",sans-serif;
+    font: 16px/30px "opensans-bold", sans-serif;
     grid-column-start: 3;
     text-transform: uppercase;
     width: 50%;
@@ -112,13 +90,15 @@ const StyledForm = styled.form`
     background: #0d0d0d;
     border: none;
     cursor: pointer;
-    border-radius: 0;
     text-align: center;
     padding: 12px 20px;
-    margin-bottom: 18px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 18px;
   }
+  ${(props) =>
+    props.error &&
+    `
+  border: 1px solid  red;
+  `}
 `;
 
 const validationSchema = yup.object().shape({
@@ -153,7 +133,6 @@ function Contact(props) {
                   <span class="required">*</span>
                   <input
                     label="Name*"
-                    size="large"
                     type="text"
                     name="name"
                     onChange={handleChange}
@@ -170,10 +149,10 @@ function Contact(props) {
                     value={values.email}
                   />
                   {errors.email && touched.email && <p>error for email</p>}
-                  <label>Subject</label>
+                  <label htmlFor="subject">Subject</label>
                   <span class="required"></span>
                   <input
-                    // label="Subject"
+                    id="subject"
                     type="text"
                     name="subject"
                     onChange={handleChange}

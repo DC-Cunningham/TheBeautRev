@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Resume from "./components/Resume";
+import Portfolio from "./components/Portfolio/Resume";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -89,7 +89,7 @@ function App() {
           <Header />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/portfolio" exact component={Resume} />
+            <Route path="/portfolio" exact component={Portfolio} />
             <Route path="/contact" exact component={Contact} />
           </Switch>
           <Footer />

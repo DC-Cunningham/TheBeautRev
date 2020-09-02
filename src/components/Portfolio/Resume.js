@@ -3,20 +3,23 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-import Wrapper from "./Wrapper";
+import Wrapper from "../Wrapper";
 import Work from "./Work";
 import Education from "./Education";
 import Tech from "./Tech";
-import Portfolio from "./Portfolio.js";
-import backgroundImage from "../assets/images/BlueBinary.jpg";
-import Avatar from "../assets/images/profilepic.jpg";
+import Portfolio from "./Portfolio";
+import AboutMe from "./AboutMe";
+
+import backgroundImage from "../../assets/images/BlueBinary.jpg";
+import Avatar from "../../assets/images/profilepic.jpg";
 
 const Row = styled.div`
   display: flex;
 `;
 const HeaderColumn = styled.div`
   flex: 200px;
-  padding: 10px 100px 20px 20px;
+  width: 300px;
+  padding: 10px 30px 20px 20px;
 `;
 const MainColumn = styled.div`
   width: 100%;
@@ -95,11 +98,29 @@ const HeroContainer = styled.div`
 
   h3 {
     font: 24px "librebaskerville-regular", serif;
-    color: #ddd;
+    color: #cfd0d1;
+    line-height: 1.8em;
   }
   hr {
     border-color: hsla(0, 0%, 58.8%, 0.9);
     border-width: 3px 0 0;
+  }
+`;
+
+const StyledSection = styled.section`
+  padding-top: 96px;
+  padding-bottom: 66px;
+
+  &.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin-top: 100px;
+  }
+
+  &.education {
+    padding-top: 76;
+    background-color: rgb(235, 238, 238);
   }
 `;
 
@@ -108,45 +129,23 @@ const AboutMeSection = styled.section`
   padding-top: 96px;
   padding-bottom: 66px;
   .avatar {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
     margin-top: 100px;
-  }
-  .about-container {
-    a {
-      text-decoration: none;
-    }
-    p {
-      color: #ccc;
-    }
-    h2 {
-      font: 22px/30px "opensans-bold", sans-serif;
-      line-height: 30px;
-      font-size: 22px;
-      color: #fff;
-    }
   }
 `;
 
 const EducationSection = styled.section`
-  background-color: #ffffff;
-  padding-top: 96px;
+  background-color: rgb(235, 238, 238);
+  padding-top: 76px;
   padding-bottom: 66px;
-  .education-container {
-    display: grid;
-    place-items: center;
-
-    & > p {
-      color: red;
-    }
-  }
 `;
 
 const WorkSection = styled.section`
-  background-color: rgb(235, 238, 238);
-  padding-top: 96px;
-  padding-bottom: 66px;
+  background-color: #ffffff;
+  padding-top: 76px;
+  padding-bottom: 200px;
   .work-container {
     & > p {
       color: red;
@@ -164,18 +163,26 @@ const TechSection = styled.section`
       grid-gap: 20px;
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+    p {
+      margin-left: 20px;
+      font-size: 20px;
+    }
   }
 `;
 
 const PortfolioSection = styled.section`
   background-color: rgb(235, 238, 238);
   padding-top: 76px;
-  padding-bottom: 200px;
+  padding-bottom: 76px;
   .portfolio-container {
     .grid {
       display: grid;
       grid-gap: 20px;
       grid-template-columns: 1fr 1fr;
+    }
+    p {
+      margin-left: 20px;
+      font-size: 20px;
     }
   }
 `;
@@ -201,7 +208,7 @@ function Resume(props) {
           </HeroOverlay>
         </Wrapper>
       </HeroSection>
-      <AboutMeSection>
+      <AboutMeSection id="about-me">
         <Wrapper>
           <div className="about-container">
             <Row>
@@ -209,29 +216,59 @@ function Resume(props) {
                 <img className="avatar" src={Avatar} alt="Avatar"></img>
               </HeaderColumn>
               <MainColumn>
-                <h2>About Me</h2>
-                <p>
-                  By incorporating a solid understanding in web technologies
-                  with substantial bicycle industry experience I have built
-                  multiple workshops from the ground up into highly efficient
-                  and profitable enterprises. Adept at swift problem solving and
-                  great time management with a focus on achieving strong and
-                  financially efficient outcomes for business.
-                </p>
-                <h2>Location</h2>
-                <p>
-                  Melbourne, Victoria
-                  <br /> Australia
-                </p>
-                <h2>Email</h2>
-                <a href="mailto:dc@beautifulrevolution.com.au">
-                  <p>dc@beautifulrevolution.com.au</p>
-                </a>
+                <AboutMe />
               </MainColumn>
             </Row>
           </div>
         </Wrapper>
       </AboutMeSection>
+      <PortfolioSection>
+        <Wrapper>
+          <div className="portfolio-container">
+            <Row>
+              <HeaderColumn>
+                <Header>Portfolio</Header>
+              </HeaderColumn>
+              <MainColumn>
+                <p>Here are some examples of my work</p>
+              </MainColumn>
+            </Row>
+            <Row>
+              <HeaderColumn />
+              <MainColumn>
+                <div className="grid">
+                  <Portfolio />
+                </div>
+              </MainColumn>
+            </Row>
+          </div>
+        </Wrapper>
+      </PortfolioSection>
+      <TechSection>
+        <Wrapper>
+          <div className="tech-container">
+            <Row>
+              <HeaderColumn>
+                <Header>Tech Proficiencies</Header>
+              </HeaderColumn>
+              <MainColumn>
+                <p>
+                  Here are just a few of the programs, frameworks and systems
+                  that I use on a regular basis.
+                </p>
+              </MainColumn>
+            </Row>
+            <Row>
+              <HeaderColumn />
+              <MainColumn>
+                <div className="grid">
+                  <Tech />
+                </div>
+              </MainColumn>
+            </Row>
+          </div>
+        </Wrapper>
+      </TechSection>
       <EducationSection>
         <Wrapper>
           <div className="education-container">
@@ -258,48 +295,19 @@ function Resume(props) {
               </MainColumn>
             </Row>
           </div>
-        </Wrapper>
-      </WorkSection>
-      <TechSection>
-        <Wrapper>
-          <div className="tech-container">
-            <Row>
-              <HeaderColumn>
-                <Header>Tech Proficiencies</Header>
-              </HeaderColumn>
-              <MainColumn>
-                <p>
-                  Here are just a few of the programs, frameworks and systems
-                  that I use on a regular basis.
-                </p>
-              </MainColumn>
-            </Row>
-            <div className="grid">
-              <Tech />
-            </div>
-          </div>
-        </Wrapper>
-      </TechSection>
-      <PortfolioSection>
-        <Wrapper>
-          <div className="portfolio-container">
-            <Row>
-              <HeaderColumn>
-                <Header>Portfolio</Header>
-              </HeaderColumn>
-              <MainColumn>
-                <p>Here are some examples of my work</p>
-              </MainColumn>
-            </Row>
-            <div className="grid">
-              <Portfolio />
-            </div>
-          </div>
-          <ScrollUp>
+          <ScrollUp
+            onClick={() =>
+              window.scroll({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+              })
+            }
+          >
             <FontAwesomeIcon icon={faAngleUp} />
           </ScrollUp>
         </Wrapper>
-      </PortfolioSection>
+      </WorkSection>
     </>
   );
 }

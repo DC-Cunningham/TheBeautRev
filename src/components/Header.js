@@ -11,13 +11,10 @@ const linkItems = [
 ];
 
 const StyledHeader = styled.div`
-  /* background-color: ${(props) =>
-    props.theme.primary.dark};
-  padding: 20px 0; */
-  font: 20px "opensans-bold", sans-serif;
+  font: 18px "opensans-regular", sans-serif;
   width: 100%;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: 3px;
   margin: 0 auto;
   z-index: 100;
   position: absolute;
@@ -34,7 +31,7 @@ const StyledUL = styled.ul`
   margin: 0;
   & > li {
     display: inline-block;
-    padding: 10px 15px;
+    padding: 30px 15px;
     margin: 0 10px;
   }
 `;

@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-import images from "../assets/images/portfolio/portfolio";
+import images from "../../assets/images/portfolio/portfolio";
 
 const PortfolioWrapper = styled.div`
-  border: 1px solid;
   text-align: center;
+  background-color: #ffffff;
 `;
 
 const Heading = styled.h3`
-  font: 18px/24px "opensans-bold", sans-serif;
+  font: 20px "opensans-bold", sans-serif;
   padding: 15px;
   text-transform: uppercase;
   text-align: center;
@@ -17,6 +17,10 @@ const Heading = styled.h3`
 `;
 
 const PortfolioImage = styled.img`
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px grey;
   height: 250px;
 `;
 

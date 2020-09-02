@@ -8,19 +8,23 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
+import FooterImage from "../assets/images/Footer.jpg";
+
 const StyledFooter = styled.div`
-  height: 165px;
+  height: 180px;
   width: 100%;
-  background: linear-gradient(to top, black, rgba(255, 0, 0, 0));
+  background-image: url(${FooterImage});
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   position: relative;
   margin-top: -180px;
-  clear: both;
-  opacity: 0.6;
+
   ul {
     padding: 35px 0 0 0;
     opacity: 0.6;
   }
+
   li {
     color: white;
     display: inline-block;
@@ -28,12 +32,13 @@ const StyledFooter = styled.div`
     margin: 0 10px;
     opacity: 0.6;
   }
+
   p {
-    /* text-align: center; */
+    padding-bottom: 20px;
   }
 `;
 
-function Footer(props) {
+function Footer() {
   return (
     <StyledFooter>
       <footer>

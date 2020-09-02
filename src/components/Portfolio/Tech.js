@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import images from "../assets/images/tech/tech.js";
+import images from "../../assets/images/tech/tech.js";
 
 const Figure = styled.figure`
   text-align: center;
