@@ -40,10 +40,10 @@ const StyledForm = styled.form`
   width: 80%;
   max-width: 1700px;
   top: 250px;
-  bottom: 5px;
+  bottom: 50px;
   left: 0;
   right: 0;
-  margin: auto auto;
+  margin: auto auto 200px;
   padding: 96px 0 102px;
   color: #636363;
   overflow: scroll;
