@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDown,
+  faAngleUp,
+  faCalculator,
+} from "@fortawesome/free-solid-svg-icons";
 
 import Wrapper from "../Wrapper";
 import Work from "./Work";
@@ -188,6 +192,7 @@ const PortfolioSection = styled.section`
 `;
 
 function Resume(props) {
+  const viewportHeight = window.innerHeight;
   return (
     <>
       <HeroSection>
@@ -202,7 +207,15 @@ function Resume(props) {
               </h3>
               <hr />
             </HeroContainer>
-            <ScrollDown>
+            <ScrollDown
+              onClick={() =>
+                window.scroll({
+                  top: viewportHeight,
+                  left: 0,
+                  behavior: "smooth",
+                })
+              }
+            >
               <FontAwesomeIcon icon={faAngleDown} />
             </ScrollDown>
           </HeroOverlay>
