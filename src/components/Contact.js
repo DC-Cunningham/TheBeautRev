@@ -34,71 +34,82 @@ const Overlay = styled.div`
 `;
 
 const StyledForm = styled.form`
-  display: grid;
-  grid-template-columns: 200px 10px 1fr;
+  display: flex;
   background: #191919;
   position: absolute;
   width: 80%;
   max-width: 1700px;
-  top: 20%;
-  bottom: 20px;
+  top: 250px;
+  bottom: 5px;
   left: 0;
   right: 0;
-  margin: 0 auto 200px;
+  margin: auto auto;
   padding: 96px 0 102px;
   color: #636363;
   overflow: scroll;
 
-  & label {
+  ul {
+    margin: auto;
+    width: 100%;
     font-family: "opensans-bold", sans-serif;
-    font-size: 15px;
     line-height: 24px;
-    margin: 12px 120px;
-    color: #ebeeee;
-    width: 26%;
-  }
-
-  &.required {
-    color: #0762f9;
+    letter-spacing: 3px;
     font-size: 16px;
   }
 
-  & > input,
-  & > textarea {
-    justify-self: center;
-    padding: 10px 20px;
-    color: #eee;
-    background: #373233;
-    margin-bottom: 42px;
-    font-size: 15px;
-    line-height: 24px;
-    width: 65%;
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    & > label {
+      flex: 1 0 120px;
+      max-width: 220px;
+      width: 25%;
+      min-width: 300px;
+      color: #ebeeee;
+      & > .required {
+        color: #0762f9;
+        padding-left: 5px;
+      }
+    }
+
+    & > input,
+    & > textarea {
+      flex: 1;
+      justify-self: center;
+      padding: 10px 20px;
+      color: #eee;
+      background: #373233;
+      margin: 10px 30px 20px;
+      max-width: 1000px;
+      min-width: 210px;
+      border: ${(props) =>
+        console.log(props) || (props.errors ? "1px solid red" : "none")};
+    }
+
+    & > textarea {
+      min-height: 120px;
+    }
   }
 
-  & > textarea {
-    min-height: 120px;
-  }
-
-  /* Button */
-  & > button {
-    font: 16px/30px "opensans-bold", sans-serif;
-    grid-column-start: 3;
+  button {
+    font-size: 20px;
     text-transform: uppercase;
     width: 50%;
-    letter-spacing: 3px;
     color: #fff;
-    background: #0d0d0d;
     border: none;
+    background: #0d0d0d;
     cursor: pointer;
     text-align: center;
-    padding: 12px 20px;
-    margin: 0 auto 18px;
+    padding: 20px 20px;
+    margin: 20px auto 18px;
   }
-  ${(props) =>
-    props.error &&
-    `
-  border: 1px solid  red;
-  `}
+
+  .error p {
+    margin: 0 auto;
+    color: red;
+  }
 `;
 
 const validationSchema = yup.object().shape({
@@ -129,54 +140,78 @@ function Contact(props) {
             }) => {
               return (
                 <StyledForm onSubmit={handleSubmit}>
-                  <label>Name</label>
-                  <span class="required">*</span>
-                  <input
-                    label="Name*"
-                    type="text"
-                    name="name"
-                    onChange={handleChange}
-                    value={values.name}
-                  />
-                  {errors.name && touched.name && <p>error for name</p>}
-                  <label>Email</label>
-                  <span class="required">*</span>
-                  <input
-                    // label="Email*"
-                    type="email"
-                    name="email"
-                    onChange={handleChange}
-                    value={values.email}
-                  />
-                  {errors.email && touched.email && <p>error for email</p>}
-                  <label htmlFor="subject">Subject</label>
-                  <span class="required"></span>
-                  <input
-                    id="subject"
-                    type="text"
-                    name="subject"
-                    onChange={handleChange}
-                    value={values.subject}
-                  />
-                  {errors.subject && touched.subject && (
-                    <p>error for subject</p>
-                  )}
-                  <label>Message</label>
-                  <span class="required">*</span>
-                  <textarea
-                    // label="Message*"
-                    min={3}
-                    max={6}
-                    name="message"
-                    onChange={handleChange}
-                    value={values.message}
-                  />
-                  {errors.message && touched.message && (
-                    <p>error for subject</p>
-                  )}
-                  <button type="submit" disabled={isSubmitting}>
-                    Send Message
-                  </button>
+                  <ul>
+                    <li>
+                      <label>
+                        Name<span class="required">*</span>
+                      </label>
+                      <input
+                        label="Name*"
+                        type="text"
+                        name="name"
+                        onChange={handleChange}
+                        value={values.name}
+                      />
+                    </li>
+                    <li className="error">
+                      {errors.name && touched.name && <p>a name is required</p>}
+                    </li>
+                    <li>
+                      <label htmlFor="email">
+                        Email<span class="required">*</span>
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        onChange={handleChange}
+                        value={values.email}
+                      />
+                    </li>
+                    <li className="error">
+                      {errors.email && touched.email && (
+                        <p>please check your email</p>
+                      )}
+                    </li>
+                    <li>
+                      <label htmlFor="subject">Subject</label>
+                      <input
+                        id="subject"
+                        type="text"
+                        name="subject"
+                        onChange={handleChange}
+                        value={values.subject}
+                      />
+                    </li>
+                    <li className="error">
+                      {errors.subject && touched.subject && (
+                        <p>please check your subject</p>
+                      )}
+                    </li>
+                    <li>
+                      <label htmlFor="message">
+                        Message<span class="required">*</span>
+                      </label>
+                      <textarea
+                        id="message"
+                        min={3}
+                        max={6}
+                        name="message"
+                        onChange={handleChange}
+                        value={values.message}
+                      />
+                    </li>
+                    <li className="error">
+                      {errors.message && touched.message && (
+                        <p>please add a message</p>
+                      )}
+                    </li>
+                    <li>
+                      <button type="submit" disabled={isSubmitting}>
+                        Send Message
+                      </button>
+                    </li>
+                  </ul>
                 </StyledForm>
               );
             }}

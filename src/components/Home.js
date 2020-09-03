@@ -26,6 +26,11 @@ const Overlay = styled.div`
     flex: 1;
     display: grid;
     place-items: center;
+
+    & > img {
+      width: 80%;
+      max-width: 880px;
+    }
   }
 `;
 
