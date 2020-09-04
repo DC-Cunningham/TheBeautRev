@@ -7,14 +7,13 @@ import Avatar from "../../assets/images/profilepic.jpg";
 import Wrapper from "../Wrapper";
 
 const StyledAboutMe = styled.section`
-  /* background-color: #000524; */
-  /* padding-top: 96px;
-  padding-bottom: 66px; */
   & .avatar {
     width: 150px;
     height: 150px;
     border-radius: 100%;
-    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
   & h2 {
     font-size: 30px;
@@ -27,12 +26,17 @@ const StyledAboutMe = styled.section`
     text-decoration: none;
   }
   & p {
+    padding: 10px;
     color: #ccc;
   }
 
   & .column {
-    width: 100%;
-    margin: 0 auto;
+    width: 40%;
+    display: block;
+  }
+
+  & .icon {
+    margin-right: 10px;
   }
 
   & .button {
@@ -40,15 +44,20 @@ const StyledAboutMe = styled.section`
     background: #444;
     display: inline-block;
     text-decoration: none;
-    letter-spacing: 0;
+    letter-spacing: 1px;
     color: #fff;
     padding: 12px 20px;
     margin: 70px;
     border: none;
     cursor: pointer;
     height: auto;
-    transition: all 0.2s ease-in-out;
     border-radius: 0;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .button {
+      margin: 0;
+    }
   }
 `;
 
@@ -89,7 +98,7 @@ function AboutMe() {
                   rel="noopener noreferrer"
                   class="button"
                 >
-                  <FontAwesomeIcon icon={faDownload} />
+                  <FontAwesomeIcon icon={faDownload} className="icon" />
                   Download Resume
                 </a>
               </div>

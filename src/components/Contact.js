@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Formik } from "formik";
 import * as yup from "yup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import Wrapper from "./Wrapper";
 import backgroundImage from "../assets/images/BlueBinary.jpg";
@@ -74,6 +76,20 @@ const StyledForm = styled.form`
       }
     }
 
+    #icon {
+      margin: 0 100px 0;
+    }
+    @media screen and (max-width: 700px) {
+      #icon {
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+
+    & > p {
+      width: 50%;
+    }
+
     & > input,
     & > textarea {
       flex: 1;
@@ -141,6 +157,13 @@ function Contact(props) {
               return (
                 <StyledForm onSubmit={handleSubmit}>
                   <ul>
+                    <li>
+                      <FontAwesomeIcon icon={faEnvelope} size="6x" id="icon" />
+                      <p>
+                        If you wish to get in contact to discuss opportunities
+                        please do and I will respond as promptly as possible
+                      </p>
+                    </li>
                     <li>
                       <label>
                         Name<span class="required">*</span>

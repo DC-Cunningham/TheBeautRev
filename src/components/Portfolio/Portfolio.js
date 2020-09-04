@@ -5,6 +5,11 @@ import images from "../../assets/images/portfolio/portfolio";
 import Wrapper from "../Wrapper";
 
 const StyledPortfolioSection = styled.section`
+  .grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
   img {
     padding: 10px;
     border: 1px solid #000;
@@ -12,15 +17,19 @@ const StyledPortfolioSection = styled.section`
     box-shadow: 5px 5px 20px grey;
     height: 250px;
   }
-  .grid {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 1fr 1fr;
-  }
   p {
     margin: 20px 20px 10px;
     line-height: 30px;
     font-size: 20px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    img {
+      height: 100px;
+    }
   }
 `;
 

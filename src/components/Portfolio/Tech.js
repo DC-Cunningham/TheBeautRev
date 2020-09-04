@@ -24,8 +24,34 @@ const StyledTechSection = styled.section`
     align-items: center;
   }
   figcaption {
-    font: 16px/24px "librebaskerville-italic", serif;
+    font-family: "librebaskerville-italic", serif;
+    font-size: 16px;
+    line-height: 24px;
     color: #6e7881;
+  }
+
+  @media screen and (max-width: 800px) {
+    .grid {
+      grid-gap: 0;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .grid {
+      grid-gap: 0;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    figure {
+      margin: 0;
+    }
+    img {
+      height: 75px;
+      width: 75px;
+    }
+    figcaption {
+      visibility: hidden;
+    }
   }
 `;
 

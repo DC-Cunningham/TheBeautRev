@@ -33,8 +33,28 @@ const StyledFooter = styled.div`
     opacity: 0.6;
   }
 
+  .icon {
+    font-size: 40px;
+  }
+
   p {
     padding-bottom: 20px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    height: 100px;
+    margin-top: -140px;
+    li {
+      padding: 1px 1px;
+      margin: 0 10px;
+    }
+    .icon {
+      font-size: 30px;
+    }
+    p {
+      padding-bottom: 0;
+      font-size: 12px;
+    }
   }
 `;
 
@@ -49,7 +69,11 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faLinkedin} size="3x" color="white" />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="icon"
+                color="white"
+              />
             </a>
           </li>
           <li key="github">
@@ -58,7 +82,11 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faGithubSquare} size="3x" color="white" />
+              <FontAwesomeIcon
+                icon={faGithubSquare}
+                className="icon"
+                color="white"
+              />
             </a>
           </li>
           <li key="facebook">
@@ -69,7 +97,7 @@ function Footer() {
             >
               <FontAwesomeIcon
                 icon={faFacebookSquare}
-                size="3x"
+                className="icon"
                 color="white"
               />
             </a>
@@ -80,7 +108,11 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faInstagram} size="3x" color="white" />
+              <FontAwesomeIcon
+                icon={faInstagram}
+                className="icon"
+                color="white"
+              />
             </a>
           </li>
         </ul>

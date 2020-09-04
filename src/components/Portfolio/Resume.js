@@ -57,36 +57,48 @@ const HeroOverlay = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
 `;
 
-const HeroContainer = styled.div`
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 700px;
-  transform: translate(-50%, -50%);
-  text-align: center;
-
-  h1 {
-    font: 90px "opensans-bold", sans-serif;
-    color: #fff;
-    letter-spacing: -2px;
-    margin-bottom: 10px;
-  }
-
-  h3 {
-    font: 24px "librebaskerville-regular", serif;
-    color: #cfd0d1;
-    line-height: 1.8em;
-  }
-  hr {
-    border-color: hsla(0, 0%, 58.8%, 0.9);
-    border-width: 3px 0 0;
-  }
-`;
-
 const ResumeWrapper = styled.div`
   padding-bottom: 200px;
 
-  & > .about-me-section {
+  .hero-section {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    @media screen and (max-width: 1100px) {
+      width: 80%;
+    }
+
+    h1 {
+      font-family: "opensans-bold", sans-serif;
+      font-size: 5.4vw;
+      color: #fff;
+      letter-spacing: -2px;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      @media screen and (max-width: 1100px) {
+        font-size: 8vw;
+      }
+    }
+
+    h3 {
+      font-family: "librebaskerville-regular", serif;
+      font-size: 1.4vw;
+      color: #cfd0d1;
+      line-height: 1.8em;
+      @media screen and (max-width: 1100px) {
+        font-size: 2vw;
+      }
+    }
+    hr {
+      border-color: hsla(0, 0%, 58.8%, 0.9);
+      border-width: 3px 0 0;
+    }
+  }
+
+  .about-me-section {
     background-color: #000524;
   }
   .portfolio-section {
@@ -115,7 +127,8 @@ function Resume(props) {
       <HeroSection>
         <Wrapper>
           <HeroOverlay>
-            <HeroContainer>
+            {/* <HeroContainer> */}
+            <div className="main-column hero-section">
               <h1>DC Cunningham</h1>
               <h3>
                 Full stack Web Developer leveraging an extensive background in
@@ -123,7 +136,8 @@ function Resume(props) {
                 multiple platforms.
               </h3>
               <hr />
-            </HeroContainer>
+            </div>
+            {/* </HeroContainer> */}
             <ScrollDown
               onClick={() =>
                 window.scroll({

@@ -76,8 +76,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .header-column {
-      min-width: 200px;
+      flex: 1;
       padding: 10px 30px 20px 20px;
+    }
+
+    .main-column {
+        flex:5;
     }
 
     .header {
@@ -110,5 +114,19 @@ export const GlobalStyle = createGlobalStyle`
     .main-content {
       width: 100%;
     }
+
+    @media screen and (max-width: 1100px) {
+      .row {
+          flex-direction: column;
+      }
+      .header-column {
+      display: block;
+      }
+      .main-column {
+      display: block;
+      padding: 10px 50px;
+      }
+    }
+
 
   `;
