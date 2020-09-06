@@ -14,7 +14,7 @@ const StyledPortfolioSection = styled.section`
     padding: 10px;
     border: 1px solid #000;
     border-radius: 5px;
-    box-shadow: 5px 5px 20px grey;
+    box-shadow: 5px 5px 10px grey;
     height: 250px;
   }
   p {
@@ -29,6 +29,10 @@ const StyledPortfolioSection = styled.section`
     }
     img {
       height: 100px;
+    }
+    p {
+      line-height: 20px;
+      font-size: 14px;
     }
   }
 `;

@@ -42,10 +42,10 @@ const StyledFooter = styled.div`
   }
 
   @media screen and (max-width: 1100px) {
-    height: 100px;
-    margin-top: -140px;
+    height: 120px;
+    margin-top: -120px;
     li {
-      padding: 1px 1px;
+      padding: 1px 0;
       margin: 0 10px;
     }
     .icon {

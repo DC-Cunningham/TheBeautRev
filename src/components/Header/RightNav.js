@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import Wrapper from "./Wrapper.js";
+import Wrapper from "../Wrapper.js";
 
 const linkItems = [
   { title: "Home", to: "/" },
@@ -11,7 +11,8 @@ const linkItems = [
 ];
 
 const StyledHeader = styled.div`
-  font: 18px "opensans-regular", sans-serif;
+  font-family: "opensans-regular", sans-serif;
+  font-size: 18px;
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -34,6 +35,21 @@ const StyledUL = styled.ul`
     padding: 30px 15px;
     margin: 0 10px;
   }
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+    background-color: #0d2538;
+    position: fixed;
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 180px;
+    padding-top: 3.5rem;
+    transition: transform 0.3s ease-in-out;
+    li {
+      color: #fff;
+    }
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -43,18 +59,18 @@ const StyledLink = styled(Link)`
   text-transform: uppercase;
 `;
 
-function Header(props) {
+const RightNav = ({ open }) => {
   const location = useLocation();
-  console.log(location);
+
   return (
     <StyledHeader>
       <Wrapper>
-        <StyledUL>
+        <StyledUL open={open}>
           {linkItems.map((linkItem) => (
             <li key={linkItem.title}>
               <StyledLink
                 to={linkItem.to}
-                active={location.pathname === linkItem.to}
+                active={location.pathname === linkItem.to ? "true" : undefined}
               >
                 {linkItem.title}
               </StyledLink>
@@ -64,6 +80,6 @@ function Header(props) {
       </Wrapper>
     </StyledHeader>
   );
-}
+};
 
-export default Header;
+export default RightNav;

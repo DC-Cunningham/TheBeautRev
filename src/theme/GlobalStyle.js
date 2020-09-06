@@ -99,7 +99,8 @@ export const GlobalStyle = createGlobalStyle`
       font-family: "opensans-bold", sans-serif;
       font-size: 25px;
       line-height: 25px;
-      color: #313131; 
+      color: #313131;
+      margin: 16px auto 20px;
     }
 
     .caption {
@@ -126,6 +127,13 @@ export const GlobalStyle = createGlobalStyle`
       display: block;
       padding: 10px 50px;
       }
+          p {
+      font-family: "opensans-regular",sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 400;
+      color: #838c95;
+    }
     }
 
 

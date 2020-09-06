@@ -84,12 +84,13 @@ const ResumeWrapper = styled.div`
     }
 
     h3 {
-      font-family: "librebaskerville-regular", serif;
+      /* font-family: "librebaskerville-regular", serif; */
+      font-family: "opensans-regular", sans-serif;
       font-size: 1.4vw;
       color: #cfd0d1;
       line-height: 1.8em;
       @media screen and (max-width: 1100px) {
-        font-size: 2vw;
+        font-size: 3vw;
       }
     }
     hr {
@@ -118,6 +119,11 @@ const ResumeWrapper = styled.div`
 const StyledSection = styled.section`
   padding-top: 96px;
   padding-bottom: 66px;
+
+  @media screen and (max-width: 1100px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 `;
 
 function Resume(props) {
@@ -127,7 +133,6 @@ function Resume(props) {
       <HeroSection>
         <Wrapper>
           <HeroOverlay>
-            {/* <HeroContainer> */}
             <div className="main-column hero-section">
               <h1>DC Cunningham</h1>
               <h3>
@@ -137,7 +142,6 @@ function Resume(props) {
               </h3>
               <hr />
             </div>
-            {/* </HeroContainer> */}
             <ScrollDown
               onClick={() =>
                 window.scroll({

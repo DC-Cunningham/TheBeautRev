@@ -4,10 +4,10 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { theme, GlobalStyle } from "./theme/GlobalStyle";
 
-import Header from "./components/Header";
+import Navbar from "./components/Header/Navbar";
 import Home from "./components/Home";
 import Portfolio from "./components/Portfolio/Resume";
-import Contact from "./components/Contact";
+import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <>
         <GlobalStyle />
         <BrowserRouter>
-          <Header />
+          <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/portfolio" exact component={Portfolio} />

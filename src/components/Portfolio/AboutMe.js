@@ -96,7 +96,7 @@ function AboutMe() {
                   href="https://www.beautifulrevolution.com.au/resume/DC-Cunningham.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="button"
+                  className="button"
                 >
                   <FontAwesomeIcon icon={faDownload} className="icon" />
                   Download Resume
