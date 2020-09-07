@@ -30,9 +30,23 @@ const StyledAboutMe = styled.section`
     color: #ccc;
   }
 
-  & .column {
-    width: 40%;
-    display: block;
+  & .contact-row {
+    display: flex;
+    @media screen and (max-width: 500px) {
+      display: block;
+    }
+  }
+
+  & .contact-column-1,
+  .contact-column-2 {
+    width: 300px;
+    flex: 1;
+  }
+
+  @media screen and (max-width: 500px) {
+    .contact-column-2 {
+      text-align: center;
+    }
   }
 
   & .icon {
@@ -56,7 +70,7 @@ const StyledAboutMe = styled.section`
 
   @media screen and (max-width: 1100px) {
     .button {
-      margin: 0;
+      margin: 30px 0;
     }
   }
 `;
@@ -72,15 +86,22 @@ function AboutMe() {
           <div className="main-column">
             <h2>About Me</h2>
             <p>
-              By incorporating a solid understanding in web technologies with
-              substantial bicycle industry experience I have built multiple
-              workshops from the ground up into highly efficient and profitable
-              enterprises. Adept at swift problem solving and great time
-              management with a focus on achieving strong and financially
-              efficient outcomes for business.
+              Being driven by a life-long passion for bikes I have built a
+              career that has seen me become a nationally regarded expert in the
+              field. I have been responsible for multiple shops and workshops
+              that have all taught me a diverse range of professional skills.
+              <br />
+              <br />I am now applying that same passion and drive to pursue what
+              has also been a continual part of my life, utilising technology to
+              create efficiency.
+              <br />
+              <br />
+              Adept at swift problem solving and great time management with a
+              focus on achieving strong and financially efficient outcomes for
+              business.
             </p>
-            <div className="row">
-              <div className="column">
+            <div className="contact-row">
+              <div className="contact-column-1">
                 <h2>Location</h2>
                 <p>
                   Melbourne, Victoria
@@ -91,7 +112,7 @@ function AboutMe() {
                   <p>dc@beautifulrevolution.com.au</p>
                 </a>
               </div>
-              <div className="column">
+              <div className="contact-column-2">
                 <a
                   href="https://www.beautifulrevolution.com.au/resume/DC-Cunningham.pdf"
                   target="_blank"
