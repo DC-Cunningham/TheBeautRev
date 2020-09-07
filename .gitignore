@@ -2,13 +2,13 @@
 
 # dependencies
 /node_modules
-/client/node_modules
+# /client/node_modules
 /.pnp
 .pnp.js
 
 # testing
 /coverage
-
+git 
 # production
 /build
 
