@@ -59,7 +59,7 @@ const StyledLink = styled(Link)`
   text-transform: uppercase;
 `;
 
-const RightNav = ({ open }) => {
+const RightNav = ({ open, setOpen }) => {
   const location = useLocation();
 
   return (
@@ -71,6 +71,7 @@ const RightNav = ({ open }) => {
               <StyledLink
                 to={linkItem.to}
                 active={location.pathname === linkItem.to ? "true" : undefined}
+                onClick={() => setOpen(!open)}
               >
                 {linkItem.title}
               </StyledLink>
