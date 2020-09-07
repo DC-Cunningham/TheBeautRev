@@ -1,6 +1,7 @@
 {
-  "name": "TBR-frontend",
+  "name": "The-Beautiful-Revolution",
   "version": "0.1.0",
+  "proxy": "http://localhost:3001/",
   "homepage": "https://www.beautifulrevolution.com.au/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
