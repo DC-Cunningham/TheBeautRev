@@ -21,6 +21,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/portfolio" exact component={Portfolio} />
             <Route path="/contact" exact component={Contact} />
+            {/* <Route component={404} /> */}
           </Switch>
           <Footer />
         </BrowserRouter>

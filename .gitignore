@@ -14,7 +14,7 @@ git
 
 #secrets
 /utils/secrets.js
-
+.env
 # misc
 .DS_Store
 .env.local

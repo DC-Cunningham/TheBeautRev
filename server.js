@@ -3,13 +3,10 @@ const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const path = require("path");
+require("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-
-const config = require("./utils/secrets");
-const emailUsername = config.emailUsername;
-const emailPassword = config.emailPassword;
 
 // // Define middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,8 +26,8 @@ app.post("/api/contact", (req, res) => {
     port: 465,
     secure: true,
     auth: {
-      user: emailUsername,
-      pass: emailPassword,
+      user: process.env.EMAIL_AUTH,
+      pass: process.env.PASSWORD_AUTH,
     },
   });
 
