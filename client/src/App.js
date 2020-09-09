@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 import { theme, GlobalStyle } from "./theme/GlobalStyle";
 
@@ -15,7 +15,7 @@ function App() {
     <ThemeProvider {...{ theme }}>
       <>
         <GlobalStyle />
-        <BrowserRouter>
+        <HashRouter>
           <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />
@@ -24,7 +24,7 @@ function App() {
             {/* <Route component={404} /> */}
           </Switch>
           <Footer />
-        </BrowserRouter>
+        </HashRouter>
       </>
     </ThemeProvider>
   );
