@@ -15,7 +15,7 @@ app.use(cors());
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(__dirname, "client/build"));
+  app.use(express.static(__dirname + "/client/build"));
 }
 
 app.post("/api/contact", (req, res) => {
@@ -56,7 +56,7 @@ app.post("/api/contact", (req, res) => {
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname + "./client/build/index.html"));
 });
 
 app.listen(PORT, function () {
