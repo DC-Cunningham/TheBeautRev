@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Portfolio from "./components/Portfolio/Resume";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/portfolio" exact component={Portfolio} />
             <Route path="/contact" exact component={Contact} />
-            {/* <Route component={404} /> */}
+            <Route component={NotFound} />
           </Switch>
           <Footer />
         </HashRouter>

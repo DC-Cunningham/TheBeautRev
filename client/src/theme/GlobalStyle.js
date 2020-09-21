@@ -92,7 +92,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .header {
-      font: 18px/24px "opensans-bold", sans-serif;
+      font-family: "opensans-bold", sans-serif;
+      font-size: 18px;
+      line-height: 24px;
       text-transform: uppercase;
       letter-spacing: 1px;
       border-bottom: 3px solid #0762f9;
