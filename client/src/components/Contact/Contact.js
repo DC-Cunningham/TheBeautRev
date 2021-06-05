@@ -110,28 +110,6 @@ function Contact(props) {
     }
   }
 
-  // async function handleSubmit(values, props) {
-  //   const { name, email, subject, message } = values;
-
-  //   try {
-  //     await API.sendMail({
-  //       name,
-  //       email,
-  //       subject,
-  //       message,
-  //     });
-  //     this.setState({
-  //       alertMessage: "Message Sent!",
-  //     });
-  //   } catch (e) {
-  //     this.setState({
-  //       alertVisible: true,
-  //       alertColor: "red",
-  //       alertMessage: e.message,
-  //     });
-  //   }
-  // }
-
   return (
     <StyledBackground>
       <Overlay>

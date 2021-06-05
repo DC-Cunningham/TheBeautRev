@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import backgroundImage from "../assets/images/BlueBinary.jpg";
-import Logo from "../assets/images/TBR_WebHeader_880x218_Dual.png";
 
 const Hero = styled.main`
   height: 100vh;

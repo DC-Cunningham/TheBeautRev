@@ -18,6 +18,18 @@ function Work() {
             <h2 className="header">Work</h2>
           </div>
           <div className="main-column">
+          <h2 className="sub-header">Developer</h2>
+            <h3 className="caption">
+              Renti
+              <span>&bull;</span> <em>2020 - Current</em>
+            </h3>
+            <p>
+              Responsible for the develpoment, deployment, and maintenance of
+              a SAAS platform. An intuitive trust accounting and rental proerty
+              listing process for property managers and tenants. Responsible
+              for new feature development including the creation of a streamlined
+              form process for connection management.
+            </p>
             <h2 className="sub-header">Web Developer</h2>
             <h3 className="caption">
               The Beautiful Revolution
