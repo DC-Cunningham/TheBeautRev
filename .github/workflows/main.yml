@@ -30,4 +30,4 @@ jobs:
           server: ftp.revolutionresearch.com.au
           username: ${{ secrets.BEAUTIFUL_REVOLUTION_USER }}
           password: ${{ secrets.BEAUTIFUL_REVOLUTION_PW }}
-          local-dir: build
+          local-dir: client/build/
