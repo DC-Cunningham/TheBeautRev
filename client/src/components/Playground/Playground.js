@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
 import backgroundImage from "../../assets/images/BlueBinary.jpg";
-import Vanta from './Vanta/Vanta';
+import Vanta from "./Vanta/Vanta";
 
 const Hero = styled.main`
   height: 100vh;
@@ -34,21 +34,14 @@ const Overlay = styled.div`
   }
 `;
 
-const Header = styled.div`
-width: 100px;
-
-`
-
 function Playground() {
-
   return (
     <Hero>
       <Overlay>
-        <Vanta/>
+        <Vanta />
       </Overlay>
     </Hero>
   );
 }
 
 export default Playground;
-

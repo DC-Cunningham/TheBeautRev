@@ -1,7 +1,9 @@
 import axios from "axios";
 
-export default {
+const API = {
   sendMail: function (data) {
     return axios.post("/api/contact", data);
   },
 };
+
+export default API;
