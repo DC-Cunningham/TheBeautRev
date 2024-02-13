@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import BIRDS from "vanta/dist/vanta.birds.min";
 import HALO from "vanta/dist/vanta.halo.min";
-import TRUNK from "vanta/dist/vanta.trunk.min";
+// import TRUNK from "vanta/dist/vanta.trunk.min";
 import NET from "vanta/dist/vanta.net.min";
 import WAVES from "vanta/dist/vanta.waves.min";
 import { ReactFlashlight } from "react-flashlight";
