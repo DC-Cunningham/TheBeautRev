@@ -28,7 +28,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           server: ftp.revolutionresearch.com.au
-        username: ${{ secrets.BEAUTIFUL_REVOLUTION_USER }}
-        password: ${{ secrets.BEAUTIFUL_REVOLUTION_PW }}
-          server-dir: /public_html
+          username: ${{ secrets.BEAUTIFUL_REVOLUTION_USER }}
+          password: ${{ secrets.BEAUTIFUL_REVOLUTION_PW }}
           local-dir: build
