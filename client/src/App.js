@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { theme, GlobalStyle } from "./theme/GlobalStyle";
 
@@ -19,13 +19,13 @@ function App() {
         <GlobalStyle />
         <BrowserRouter>
           <Navbar />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/portfolio" exact component={Portfolio} />
-            <Route path="/contact" exact component={Contact} />
-            <Route path="/playground" exact component={Playground} />
-            <Route component={NotFound} />
-          </Switch>
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/portfolio" exact element={<Portfolio />} />
+            <Route path="/contact" exact element={<Contact />} />
+            <Route path="/playground" exact element={<Playground />} />
+            <Route element={<NotFound />} />
+          </Routes>
           <Footer />
         </BrowserRouter>
       </>

@@ -5,7 +5,6 @@ import HALO from "vanta/dist/vanta.halo.min";
 import TRUNK from "vanta/dist/vanta.trunk.min";
 import NET from "vanta/dist/vanta.net.min";
 import WAVES from "vanta/dist/vanta.waves.min";
-import { ReactFlashlight } from "react-flashlight";
 
 import images from "../../../assets/images/playground/playground";
 
@@ -99,21 +98,8 @@ const NetButton = styled.button`
   z-index: 999;
 `;
 
-const TorchButton = styled.button`
-  width: 80px;
-  height: 80px;
-  border: none;
-  background-color: transparent;
-  background-image: url(${(props) =>
-    props.torchIsOn ? images.TorchOn : images.TorchOff});
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 999;
-`;
-
 const Vanta = () => {
   const [vantaEffect, setVantaEffect] = useState(0);
-  const [isATorch, setIsATorch] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -200,23 +186,16 @@ const Vanta = () => {
     );
   };
 
-  const onClickTorch = () => {
-    setIsATorch(!isATorch);
-  };
-
   return (
     <>
       <ButtonContainer>
-        <TorchButton torchIsOn={isATorch} onClick={onClickTorch}></TorchButton>
         <NetButton onClick={onClickNet}></NetButton>
         <HaloButton onClick={onClickHalo}></HaloButton>
         <TriangleButton onClick={onClickTriangle}></TriangleButton>
         <MeshButton onClick={onClickMesh}></MeshButton>
       </ButtonContainer>
       <StyledVanta ref={ref}>
-        <ReactFlashlight enabled={isATorch} darkness={1}>
-          <MainFrame />
-        </ReactFlashlight>
+        <MainFrame />
       </StyledVanta>
     </>
   );
