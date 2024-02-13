@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import images from "../../assets/images/portfolio/portfolio";
+import VicChamps from "../../assets/images/portfolio/vicChamps.jpg";
+import TBCP from "../../assets/images/portfolio/TBCP.jpg";
+import WeCurate from "../../assets/images/portfolio/weCurate.jpg";
+import RevolutionResearch from "../../assets/images/portfolio/revolutionResearch.jpg";
 import Wrapper from "../Wrapper";
 
 const StyledPortfolioSection = styled.section`
@@ -57,7 +60,10 @@ function Portfolio() {
             <div className="grid">
               <PortfolioWrapper>
                 <h2 className="sub-header">The Bike Compatibility Project</h2>
-                <img src={images.TBCP} alt="The Bike Compatibility Project" />
+                <img
+                  src={TBCP}
+                  alt="The Bike Compatibility Project Screenshot"
+                />
                 <p>
                   A React-based application deployed using a Mongo, Express,
                   Node and Material UI build. This project is a proof of concept
@@ -69,10 +75,7 @@ function Portfolio() {
                 <h2 className="sub-header">
                   Victorian MTB Championship Series
                 </h2>
-                <img
-                  src={images.vicChamps}
-                  alt="The Bike Compatibility Project"
-                />
+                <img src={VicChamps} alt="Vic Champ Series Screenshot" />
                 <p>
                   A website built on the Wordpress framework. This site provides
                   a landing point for Victorian mountain bikers to learn all the
@@ -83,10 +86,7 @@ function Portfolio() {
               </PortfolioWrapper>
               <PortfolioWrapper>
                 <h2 className="sub-header">we curate</h2>
-                <img
-                  src={images.weCurate}
-                  alt="The Bike Compatibility Project"
-                />
+                <img src={WeCurate} alt="We Curate Screenshot" />
                 <p>
                   A responsive website built using the Bootstrap Framework. This
                   site puts an emphasis on design to help purvey the ethos of
@@ -97,8 +97,8 @@ function Portfolio() {
               <PortfolioWrapper>
                 <h2 className="sub-header">Revolution Research Laboratories</h2>
                 <img
-                  src={images.revolutionResearch}
-                  alt="The Bike Compatibility Project"
+                  src={RevolutionResearch}
+                  alt="Revolution Research Screenshot"
                 />
                 <p>
                   A website built on the Wordpress framework. This site provides

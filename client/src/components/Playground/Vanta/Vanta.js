@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import BIRDS from "vanta/dist/vanta.birds.min";
 import HALO from "vanta/dist/vanta.halo.min";
-import TRUNK from "vanta/dist/vanta.trunk.min";
 import NET from "vanta/dist/vanta.net.min";
 import WAVES from "vanta/dist/vanta.waves.min";
 
-import images from "../../../assets/images/playground/playground";
+import Halo from "../../../assets/images/playground/Halo.png";
+import Net from "../../../assets/images/playground/Net.png";
 
 const StyledVanta = styled.div`
   position: absolute;
@@ -59,7 +59,7 @@ const HaloButton = styled.button`
   height: 80px;
   border: none;
   background-color: transparent;
-  background-image: url(${images.Halo});
+  background-image: url(${Halo});
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 999;
@@ -70,7 +70,7 @@ const TriangleButton = styled.button`
   height: 80px;
   border: none;
   background-color: transparent;
-  background-image: url(${images.Halo});
+  background-image: url(${Halo});
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 999;
@@ -81,7 +81,7 @@ const MeshButton = styled.button`
   height: 80px;
   border: none;
   background-color: transparent;
-  background-image: url(${images.Halo});
+  background-image: url(${Halo});
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 999;
@@ -92,7 +92,7 @@ const NetButton = styled.button`
   height: 80px;
   border: none;
   background-color: transparent;
-  background-image: url(${images.Net});
+  background-image: url(${Net});
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 999;

@@ -2,7 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 import Wrapper from "../Wrapper";
-import images from "../../assets/images/tech/tech.js";
+import VSCodeImage from "../../assets/images/tech/VSCode.png";
+import GitImage from "../../assets/images/tech/Git.png";
+import BootstrapImage from "../../assets/images/tech/Bootstrap.png";
+import CSSImage from "../../assets/images/tech/CSS.png";
+import ExpressImage from "../../assets/images/tech/Express.png";
+import HTMLImage from "../../assets/images/tech/HTML.png";
+import IllustratorImage from "../../assets/images/tech/Illustrator.png";
+import JavascriptImage from "../../assets/images/tech/Javascript.png";
+import PhotoshopImage from "../../assets/images/tech/Photoshop.png";
+import ReactImage from "../../assets/images/tech/React.png";
+import SequelizeImage from "../../assets/images/tech/Sequelize.png";
+import WordpressImage from "../../assets/images/tech/Wordpress.png";
+import MongoDBImage from "../../assets/images/tech/MongoDB.png";
+import WooImage from "../../assets/images/tech/Woo.png";
+import AWSImage from "../../assets/images/tech/AWS.png";
+import NodeImage from "../../assets/images/tech/Node.png";
+import jQueryImage from "../../assets/images/tech/jQuery.png";
 
 const StyledTechSection = styled.section`
   .grid {
@@ -66,75 +82,71 @@ function Tech() {
           <div className="main-column">
             <div className="grid">
               <figure>
-                <img src={images.VSCode} alt="logo" />
+                <img src={VSCodeImage} alt="logo" />
                 <figcaption>VSCode</figcaption>
               </figure>
               <figure>
-                <img src={images.Git} alt="logo" />
+                <img src={GitImage} alt="logo" />
                 <figcaption>Git</figcaption>
               </figure>
               <figure>
-                <img src={images.Bootstrap} alt="logo" />
+                <img src={BootstrapImage} alt="logo" />
                 <figcaption>Bootstrap</figcaption>
               </figure>
               <figure>
-                <img src={images.CSS} alt="logo" />
+                <img src={CSSImage} alt="logo" />
                 <figcaption>CSS</figcaption>
               </figure>
               <figure>
-                <img src={images.Express} alt="logo" />
+                <img src={ExpressImage} alt="logo" />
                 <figcaption>Express</figcaption>
               </figure>
               <figure>
-                <img src={images.HTML} alt="logo" />
+                <img src={HTMLImage} alt="logo" />
                 <figcaption>HTML</figcaption>
               </figure>
               <figure>
-                <img src={images.Illustrator} alt="logo" />
+                <img src={IllustratorImage} alt="logo" />
                 <figcaption>Illustrator</figcaption>
               </figure>
               <figure>
-                <img src={images.Javascript} alt="logo" />
+                <img src={JavascriptImage} alt="logo" />
                 <figcaption>Javascript</figcaption>
               </figure>
               <figure>
-                <img src={images.jQuery} alt="logo" />
+                <img src={jQueryImage} alt="logo" />
                 <figcaption>jQuery</figcaption>
               </figure>
               <figure>
-                <img src={images.MongoDB} alt="logo" />
+                <img src={MongoDBImage} alt="logo" />
                 <figcaption>MongoDB</figcaption>
               </figure>
               <figure>
-                <img src={images.Node} alt="logo" />
+                <img src={NodeImage} alt="logo" />
                 <figcaption>Node.js</figcaption>
               </figure>
               <figure>
-                <img src={images.Photoshop} alt="logo" />
+                <img src={PhotoshopImage} alt="logo" />
                 <figcaption>Photoshop</figcaption>
               </figure>
               <figure>
-                <img src={images.React} alt="logo" />
+                <img src={ReactImage} alt="logo" />
                 <figcaption>React.js</figcaption>
               </figure>
               <figure>
-                <img src={images.Sequelize} alt="logo" />
+                <img src={SequelizeImage} alt="logo" />
                 <figcaption>Sequelize</figcaption>
               </figure>
               <figure>
-                <img src={images.Wordpress} alt="logo" />
+                <img src={WordpressImage} alt="logo" />
                 <figcaption>Wordpress</figcaption>
               </figure>
               <figure>
-                <img src={images.MongoDB} alt="logo" />
-                <figcaption>MongoDB</figcaption>
-              </figure>
-              <figure>
-                <img src={images.Woo} alt="logo" />
+                <img src={WooImage} alt="logo" />
                 <figcaption>Woo Commerce</figcaption>
               </figure>
               <figure>
-                <img src={images.AWS} alt="logo" />
+                <img src={AWSImage} alt="logo" />
                 <figcaption>AWS</figcaption>
               </figure>
             </div>
