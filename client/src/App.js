@@ -15,20 +15,18 @@ import NotFound from "./components/NotFound";
 function App() {
   return (
     <ThemeProvider {...{ theme }}>
-      <>
-        <GlobalStyle />
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" exact element={<Home />} />
-            <Route path="/portfolio" exact element={<Portfolio />} />
-            <Route path="/contact" exact element={<Contact />} />
-            <Route path="/playground" exact element={<Playground />} />
-            <Route element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/portfolio" exact element={<Portfolio />} />
+          <Route path="/contact" exact element={<Contact />} />
+          <Route path="/playground" exact element={<Playground />} />
+          <Route element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
