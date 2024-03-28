@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.revolutionresearch.com.au
           username: ${{ secrets.BEAUTIFUL_REVOLUTION_USER }}
