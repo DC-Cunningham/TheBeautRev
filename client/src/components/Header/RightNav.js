@@ -8,7 +8,7 @@ const linkItems = [
   { title: "Home", to: "/" },
   { title: "Portfolio", to: "/portfolio" },
   { title: "Contact", to: "/contact" },
-  { title: "Playground", to: "/playground" },
+  // { title: "Playground", to: "/playground" },
 ];
 
 const StyledHeader = styled.div`
