@@ -91,12 +91,20 @@ function Tech() {
                 <figcaption>Git</figcaption>
               </figure>
               <figure>
-                <img src={BootstrapImage} alt="logo" />
-                <figcaption>Bootstrap</figcaption>
+                <img src={NodeImage} alt="logo" />
+                <figcaption>Node.js</figcaption>
               </figure>
               <figure>
-                <img src={CSSImage} alt="logo" />
-                <figcaption>CSS</figcaption>
+                <img src={ReactImage} alt="logo" />
+                <figcaption>React.js</figcaption>
+              </figure>
+              <figure>
+                <img src={AWSImage} alt="logo" />
+                <figcaption>AWS</figcaption>
+              </figure>
+              <figure>
+                <img src={FlutterImage} alt="logo" />
+                <figcaption>Flutter</figcaption>
               </figure>
               <figure>
                 <img src={ExpressImage} alt="logo" />
@@ -107,36 +115,36 @@ function Tech() {
                 <figcaption>HTML</figcaption>
               </figure>
               <figure>
-                <img src={IllustratorImage} alt="logo" />
-                <figcaption>Illustrator</figcaption>
+                <img src={CSSImage} alt="logo" />
+                <figcaption>CSS</figcaption>
               </figure>
               <figure>
                 <img src={JavascriptImage} alt="logo" />
                 <figcaption>Javascript</figcaption>
               </figure>
               <figure>
-                <img src={jQueryImage} alt="logo" />
-                <figcaption>jQuery</figcaption>
-              </figure>
-              <figure>
-                <img src={MongoDBImage} alt="logo" />
-                <figcaption>MongoDB</figcaption>
-              </figure>
-              <figure>
-                <img src={NodeImage} alt="logo" />
-                <figcaption>Node.js</figcaption>
+                <img src={BootstrapImage} alt="logo" />
+                <figcaption>Bootstrap</figcaption>
               </figure>
               <figure>
                 <img src={PhotoshopImage} alt="logo" />
                 <figcaption>Photoshop</figcaption>
               </figure>
               <figure>
-                <img src={ReactImage} alt="logo" />
-                <figcaption>React.js</figcaption>
+                <img src={IllustratorImage} alt="logo" />
+                <figcaption>Illustrator</figcaption>
               </figure>
               <figure>
                 <img src={SequelizeImage} alt="logo" />
                 <figcaption>Sequelize</figcaption>
+              </figure>
+              <figure>
+                <img src={MongoDBImage} alt="logo" />
+                <figcaption>MongoDB</figcaption>
+              </figure>
+              <figure>
+                <img src={jQueryImage} alt="logo" />
+                <figcaption>jQuery</figcaption>
               </figure>
               <figure>
                 <img src={WordpressImage} alt="logo" />
@@ -145,14 +153,6 @@ function Tech() {
               <figure>
                 <img src={WooImage} alt="logo" />
                 <figcaption>Woo Commerce</figcaption>
-              </figure>
-              <figure>
-                <img src={AWSImage} alt="logo" />
-                <figcaption>AWS</figcaption>
-              </figure>
-              <figure>
-                <img src={FlutterImage} alt="logo" />
-                <figcaption>Flutter</figcaption>
               </figure>
             </div>
           </div>
