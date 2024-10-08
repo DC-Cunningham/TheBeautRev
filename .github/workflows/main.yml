@@ -30,6 +30,5 @@ jobs:
           server: ftp.revolutionresearch.com.au
           username: ${{ secrets.BEAUTIFUL_REVOLUTION_USER }}
           password: ${{ secrets.BEAUTIFUL_REVOLUTION_PW }}
-          protocol: ftps
           local-dir: ./client/build/
           server-dir: /home1/cp421265/public_html/beautifulrevolution.com.au/
