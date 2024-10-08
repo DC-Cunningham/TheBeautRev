@@ -27,7 +27,7 @@ jobs:
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.revolutionresearch.com.au
+          server: /home1/cp421265/public_html/beautifulrevolution.com.au
           username: ${{ secrets.BEAUTIFUL_REVOLUTION_USER }}
           password: ${{ secrets.BEAUTIFUL_REVOLUTION_PW }}
           local-dir: client/build/
