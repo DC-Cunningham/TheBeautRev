@@ -1,24 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 
-import Wrapper from "../Wrapper";
-import VSCodeImage from "../../assets/images/tech/VSCode.png";
-import GitImage from "../../assets/images/tech/Git.png";
+import AWSImage from "../../assets/images/tech/AWS.png";
 import BootstrapImage from "../../assets/images/tech/Bootstrap.png";
 import CSSImage from "../../assets/images/tech/CSS.png";
 import ExpressImage from "../../assets/images/tech/Express.png";
+import FlutterImage from "../../assets/images/tech/Flutter.png";
+import GitImage from "../../assets/images/tech/Git.png";
 import HTMLImage from "../../assets/images/tech/HTML.png";
 import IllustratorImage from "../../assets/images/tech/Illustrator.png";
 import JavascriptImage from "../../assets/images/tech/Javascript.png";
+import MongoDBImage from "../../assets/images/tech/MongoDB.png";
+import NodeImage from "../../assets/images/tech/Node.png";
 import PhotoshopImage from "../../assets/images/tech/Photoshop.png";
 import ReactImage from "../../assets/images/tech/React.png";
 import SequelizeImage from "../../assets/images/tech/Sequelize.png";
-import WordpressImage from "../../assets/images/tech/Wordpress.png";
-import MongoDBImage from "../../assets/images/tech/MongoDB.png";
+import VSCodeImage from "../../assets/images/tech/VSCode.png";
 import WooImage from "../../assets/images/tech/Woo.png";
-import AWSImage from "../../assets/images/tech/AWS.png";
-import NodeImage from "../../assets/images/tech/Node.png";
+import WordpressImage from "../../assets/images/tech/Wordpress.png";
 import jQueryImage from "../../assets/images/tech/jQuery.png";
+import Wrapper from "../Wrapper";
 
 const StyledTechSection = styled.section`
   .grid {
@@ -148,6 +149,10 @@ function Tech() {
               <figure>
                 <img src={AWSImage} alt="logo" />
                 <figcaption>AWS</figcaption>
+              </figure>
+              <figure>
+                <img src={FlutterImage} alt="logo" />
+                <figcaption>Flutter</figcaption>
               </figure>
             </div>
           </div>
