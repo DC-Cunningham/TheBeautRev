@@ -31,4 +31,4 @@ jobs:
           username: ${{ secrets.BEAUTIFUL_REVOLUTION_USER }}
           password: ${{ secrets.BEAUTIFUL_REVOLUTION_PW }}
           local-dir: client/build/
-          server-dir: /home1/cp421265/public_html/beautifulrevolution.com.au
+          server-dir: /home1/cp421265/public_html/beautifulrevolution.com.au/
