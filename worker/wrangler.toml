@@ -1,0 +1,18 @@
+name = "tbr-contact"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+
+routes = [{ pattern = "api.beautifulrevolution.com.au", custom_domain = true }]
+
+[vars]
+ALLOWED_ORIGINS = "https://www.beautifulrevolution.com.au,https://beautifulrevolution.com.au"
+CONTACT_TO = "dc@beautifulrevolution.com.au"
+CONTACT_FROM = "website@beautifulrevolution.com.au"
+
+# The binding can only deliver to this address, whatever the Worker asks for.
+[[send_email]]
+name = "EMAIL"
+destination_address = "dc@beautifulrevolution.com.au"
+
+# Secrets (set via CLI, never commit these):
+# wrangler secret put TURNSTILE_SECRET_KEY
