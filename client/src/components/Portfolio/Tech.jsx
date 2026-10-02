@@ -1,8 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
 import AWSImage from "../../assets/images/tech/AWS.png";
-import BootstrapImage from "../../assets/images/tech/Bootstrap.png";
 import CSSImage from "../../assets/images/tech/CSS.png";
 import ExpressImage from "../../assets/images/tech/Express.png";
 import FlutterImage from "../../assets/images/tech/Flutter.png";
@@ -15,10 +13,8 @@ import NodeImage from "../../assets/images/tech/Node.png";
 import PhotoshopImage from "../../assets/images/tech/Photoshop.png";
 import ReactImage from "../../assets/images/tech/React.png";
 import SequelizeImage from "../../assets/images/tech/Sequelize.png";
+import TypescriptImage from "../../assets/images/tech/Typescript.png";
 import VSCodeImage from "../../assets/images/tech/VSCode.png";
-import WooImage from "../../assets/images/tech/Woo.png";
-import WordpressImage from "../../assets/images/tech/Wordpress.png";
-import jQueryImage from "../../assets/images/tech/jQuery.png";
 import Wrapper from "../Wrapper";
 
 const StyledTechSection = styled.section`
@@ -41,7 +37,7 @@ const StyledTechSection = styled.section`
     align-items: center;
   }
   figcaption {
-    font-family: "librebaskerville-italic", serif;
+    font-family: "opensans", sans-serif;
     font-size: 16px;
     line-height: 24px;
     color: #6e7881;
@@ -99,6 +95,10 @@ function Tech() {
                 <figcaption>React.js</figcaption>
               </figure>
               <figure>
+                <img src={MongoDBImage} alt="logo" />
+                <figcaption>MongoDB</figcaption>
+              </figure>
+              <figure>
                 <img src={AWSImage} alt="logo" />
                 <figcaption>AWS</figcaption>
               </figure>
@@ -119,12 +119,12 @@ function Tech() {
                 <figcaption>CSS</figcaption>
               </figure>
               <figure>
-                <img src={JavascriptImage} alt="logo" />
-                <figcaption>Javascript</figcaption>
+                <img src={TypescriptImage} alt="logo" />
+                <figcaption>Typescript</figcaption>
               </figure>
               <figure>
-                <img src={BootstrapImage} alt="logo" />
-                <figcaption>Bootstrap</figcaption>
+                <img src={JavascriptImage} alt="logo" />
+                <figcaption>Javascript</figcaption>
               </figure>
               <figure>
                 <img src={PhotoshopImage} alt="logo" />
@@ -137,22 +137,6 @@ function Tech() {
               <figure>
                 <img src={SequelizeImage} alt="logo" />
                 <figcaption>Sequelize</figcaption>
-              </figure>
-              <figure>
-                <img src={MongoDBImage} alt="logo" />
-                <figcaption>MongoDB</figcaption>
-              </figure>
-              <figure>
-                <img src={jQueryImage} alt="logo" />
-                <figcaption>jQuery</figcaption>
-              </figure>
-              <figure>
-                <img src={WordpressImage} alt="logo" />
-                <figcaption>Wordpress</figcaption>
-              </figure>
-              <figure>
-                <img src={WooImage} alt="logo" />
-                <figcaption>Woo Commerce</figcaption>
               </figure>
             </div>
           </div>

@@ -1,10 +1,14 @@
-import React from "react";
 import styled from "styled-components";
 
 import backgroundImage from "../assets/images/BlueBinary.jpg";
 import Logo from "../assets/images/TBR_WebHeader_880x218_Dual.png";
 
 const Hero = styled.main`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 100vh;
   background-image: url(${backgroundImage});
   background-repeat: no-repeat;
@@ -13,7 +17,7 @@ const Hero = styled.main`
 `;
 
 const Overlay = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
