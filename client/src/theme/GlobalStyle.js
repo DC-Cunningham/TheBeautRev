@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "../../node_modules/styled-components/dist/styled-components.cjs";
+import { createGlobalStyle } from "styled-components";
 
 import LibreBaskervilleItalic from "../assets/fonts/librebaskerville-italic-webfont.woff";
 import LibreBaskervilleRegular from "../assets/fonts/librebaskerville-regular-webfont.woff";

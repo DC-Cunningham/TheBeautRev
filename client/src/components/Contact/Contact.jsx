@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -9,6 +9,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Wrapper from "../Wrapper";
 import backgroundImage from "../../assets/images/BlueBinary.jpg";
 import { Input, TextArea } from "./Input";
+import Turnstile from "./Turnstile";
 
 const StyledBackground = styled.section`
   height: calc(100vh);
@@ -82,6 +83,30 @@ const FormHeader = styled.div`
   }
 `;
 
+const FormFooter = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  & > p {
+    font-family: "opensans", sans-serif;
+    margin-top: 10px;
+    color: #ebeeee;
+  }
+  & > p.error {
+    color: red;
+  }
+`;
+
+// Hidden from people; bots that fill every field give themselves away.
+const Honeypot = styled.div`
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+`;
+
 const validationSchema = yup.object().shape({
   email: yup.string().email().required("Please enter a valid email"),
   message: yup.string().required("Please enter a valid message"),
@@ -89,17 +114,22 @@ const validationSchema = yup.object().shape({
 });
 
 function Contact(props) {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileReset, setTurnstileReset] = useState(0);
+
   async function handleSubmit(
     values,
     { setSubmitting, setErrors, setStatus, resetForm }
   ) {
-    const { name, email, subject, message } = values;
+    const { name, email, subject, message, website } = values;
     try {
       await API.sendMail({
         name,
         email,
         subject,
         message,
+        website,
+        turnstileToken,
       });
       resetForm({});
       setStatus({ success: true });
@@ -108,6 +138,9 @@ function Contact(props) {
       setSubmitting(false);
       setErrors({ submit: error.message });
     }
+    // Tokens are single use.
+    setTurnstileToken("");
+    setTurnstileReset((n) => n + 1);
   }
 
   return (
@@ -116,13 +149,20 @@ function Contact(props) {
         <Wrapper>
           <Formik
             onSubmit={handleSubmit}
-            initialValues={{ email: "", name: "", subject: "", message: "" }}
+            initialValues={{
+              email: "",
+              name: "",
+              subject: "",
+              message: "",
+              website: "",
+            }}
             validationSchema={validationSchema}
           >
             {({
               values,
               errors,
               touched,
+              status,
               isSubmitting,
               handleSubmit,
               handleChange,
@@ -172,7 +212,36 @@ function Contact(props) {
                     value={values.message}
                     error={errors.message && touched.message}
                   />
-                  <button type="submit" disabled={isSubmitting}>
+                  <Honeypot aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      id="website"
+                      name="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      onChange={handleChange}
+                      value={values.website}
+                    />
+                  </Honeypot>
+                  <FormFooter>
+                    <Turnstile
+                      onToken={setTurnstileToken}
+                      resetKey={turnstileReset}
+                    />
+                    {status?.success === true && (
+                      <p>Thanks, your message has been sent.</p>
+                    )}
+                    {status?.success === false && (
+                      <p className="error">
+                        Sorry, your message could not be sent. Please try again.
+                      </p>
+                    )}
+                  </FormFooter>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || !turnstileToken}
+                  >
                     Send Message
                   </button>
                 </StyledForm>
