@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import Wrapper from "../Wrapper.js";
+import Wrapper from "../Wrapper";
 
 const linkItems = [
   { title: "Home", to: "/" },
