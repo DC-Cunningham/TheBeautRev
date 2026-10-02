@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /client/node_modules
+/worker/node_modules
 /.pnp
 .pnp.js
 
@@ -15,6 +16,8 @@ git
 #secrets
 /utils/secrets.js
 .env
+.dev.vars
+.wrangler/
 # misc
 .DS_Store
 .env.local
