@@ -2,3 +2,5 @@
 # Cloudflare's published Turnstile test secret: always passes validation.
 TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
 ALLOWED_ORIGINS=http://localhost:3000
+# A real Resend API key. Local submissions send a real email to CONTACT_TO.
+RESEND_API_KEY=

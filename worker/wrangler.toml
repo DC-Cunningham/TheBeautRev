@@ -8,11 +8,8 @@ routes = [{ pattern = "api.beautifulrevolution.com.au", custom_domain = true }]
 ALLOWED_ORIGINS = "https://www.beautifulrevolution.com.au,https://beautifulrevolution.com.au"
 CONTACT_TO = "dc@beautifulrevolution.com.au"
 CONTACT_FROM = "website@beautifulrevolution.com.au"
-
-# The binding can only deliver to this address, whatever the Worker asks for.
-[[send_email]]
-name = "EMAIL"
-destination_address = "dc@beautifulrevolution.com.au"
+RESEND_API_URL = "https://api.resend.com/emails"
 
 # Secrets (set via CLI, never commit these):
 # wrangler secret put TURNSTILE_SECRET_KEY
+# wrangler secret put RESEND_API_KEY

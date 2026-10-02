@@ -1,5 +1,6 @@
 export interface Env {
-  EMAIL: SendEmail;
+  RESEND_API_KEY: string;
+  RESEND_API_URL: string;
   TURNSTILE_SECRET_KEY: string;
   ALLOWED_ORIGINS: string;
   CONTACT_TO: string;
@@ -89,20 +90,18 @@ export default {
       return json({ error: "Verification failed" }, 403, cors);
     }
 
-    try {
-      await env.EMAIL.send({
-        to: env.CONTACT_TO,
-        from: { email: env.CONTACT_FROM, name: "The Beautiful Revolution website" },
-        replyTo: { email, name },
-        subject: subject ? `Contact form: ${subject}` : `Contact form: message from ${name}`,
-        text: `From: ${name} <${email}>\n\n${message}`,
-        html: `<h3>Message from The Beautiful Revolution contact page</h3>
+    const sent = await sendEmail(env, {
+      from: `The Beautiful Revolution website <${env.CONTACT_FROM}>`,
+      to: env.CONTACT_TO,
+      reply_to: email,
+      subject: subject ? `Contact form: ${subject}` : `Contact form: message from ${name}`,
+      text: `From: ${name} <${email}>\n\n${message}`,
+      html: `<h3>Message from The Beautiful Revolution contact page</h3>
 <p>From: ${escapeHtml(name)}</p>
 <p>At: ${escapeHtml(email)}</p>
 <p style="white-space: pre-wrap">${escapeHtml(message)}</p>`,
-      });
-    } catch (err: any) {
-      console.error("Email send failed", err?.code, err?.message);
+    });
+    if (!sent) {
       return json({ error: "Could not send message" }, 502, cors);
     }
 
@@ -121,6 +120,27 @@ async function verifyTurnstile(token: string, ip: string | null, env: Env): Prom
     const result = (await res.json()) as { success: boolean };
     return result.success === true;
   } catch {
+    return false;
+  }
+}
+
+// Sends through the Resend API. The recipient is fixed in config, never taken from the request.
+async function sendEmail(env: Env, email: Record<string, string>): Promise<boolean> {
+  try {
+    const res = await fetch(env.RESEND_API_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(email),
+    });
+    if (!res.ok) {
+      console.error("Email send failed", res.status, await res.text());
+    }
+    return res.ok;
+  } catch (err: any) {
+    console.error("Email send failed", err?.message);
     return false;
   }
 }
